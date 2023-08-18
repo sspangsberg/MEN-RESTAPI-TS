@@ -1,4 +1,6 @@
 FROM node:18.17.0-bullseye-slim
+#FROM node:16-bullseye-slim
+
 WORKDIR /src
 
 RUN apt-get -y update

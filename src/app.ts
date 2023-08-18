@@ -7,8 +7,9 @@ const port: number = 4000 || process.env.PORT;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get("/", (req: Request, res: Response, next: NextFunction) => {
-    res.send("Hello World");
+// Health check route...
+app.get("/healthcheck", (req: Request, res: Response, next: NextFunction) => {
+    res.send("I'm alive!");
 });
 
 app.listen(port, () => {
