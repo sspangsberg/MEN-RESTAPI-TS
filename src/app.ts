@@ -1,8 +1,12 @@
 import express, { Application, Request, Response, NextFunction } from "express";
-import bodyParser from "body-parser"
+import bodyParser from "body-parser";
+import dotenv from "dotenv";
+
+// setup dot env, so we can load environment variables
+dotenv.config();
 
 const app: Application = express();
-const port: number = 4000 || process.env.PORT;
+const port = process.env.PORT || '4000';
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
