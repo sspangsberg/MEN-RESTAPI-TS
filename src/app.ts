@@ -6,7 +6,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app: Application = express();
-const port = process.env.PORT || '4000';
+const port: number = Number(String(process.env.PORT)) || 4000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
