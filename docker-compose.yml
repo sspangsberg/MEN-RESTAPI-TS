@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   mongodb:
-    container_name: mongo_db
+    container_name: mongo_db_1
     image: mongo
     restart: always
     environment:
@@ -17,9 +17,9 @@ services:
       - node-network
 
   node-app:
-    container_name: node_app
+    container_name: node_app_1
     tty: true
-    image: node16-template:v7
+    image: node-bullseye-slim-21.4.0:v1
     environment:
       - MONGODB_URL=mongodb://mongodb:27017/app_db
     ports:
@@ -32,7 +32,7 @@ services:
       - node-network
 
   mongo-express:
-    container_name: mongo_express_ui
+    container_name: mongo_express_ui_1
     image: mongo-express
     restart: always
     ports:
@@ -40,7 +40,7 @@ services:
     environment:
       ME_CONFIG_MONGODB_ADMINUSERNAME: root
       ME_CONFIG_MONGODB_ADMINPASSWORD: mongopass
-      ME_CONFIG_MONGODB_URL: mongodb://root:mongopass@mongo_db:27017/
+      ME_CONFIG_MONGODB_URL: mongodb://root:mongopass@mongo_db_1:27017/
     networks:
       - node-network
 
