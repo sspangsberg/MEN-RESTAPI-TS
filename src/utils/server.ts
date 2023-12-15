@@ -1,10 +1,10 @@
 import express, { Application } from "express";
-import health_route from "./routes/health";
+import routes from "../routes";
 
 export default function createServer(): Application {
-    const app: Application = express();
+    const app = express();
     app.use(express.json());
-    app.use("/", health_route);
+    routes(app);
 
     const port: number = Number(String(process.env.PORT)) || 4000;
 
