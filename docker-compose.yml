@@ -19,7 +19,7 @@ services:
   node-app:
     container_name: node_app_1
     tty: true
-    image: node-bullseye-slim-21.4.0:v1
+    image: node-bullseye-slim-20.10.0:v1
     environment:
       - MONGODB_URL=mongodb://mongodb:27017/app_db
     ports:

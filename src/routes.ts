@@ -1,5 +1,5 @@
 import express, { Express, Request, Response } from "express";
-
+import INote from "./interfaces/INote";
 /**
  * Adds routes to the specified Express app
  * @param app 

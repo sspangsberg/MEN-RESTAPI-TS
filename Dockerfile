@@ -1,4 +1,4 @@
-FROM node-bullseye-slim-21.4.0:v1
+FROM node:20.10.0-bullseye-slim:v1
 #FROM node:16-bullseye-slim
 
 WORKDIR /src
